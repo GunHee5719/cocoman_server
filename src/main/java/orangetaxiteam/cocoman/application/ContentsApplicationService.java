@@ -1,6 +1,7 @@
 package orangetaxiteam.cocoman.application;
 
 
+import orangetaxiteam.cocoman.application.dto.ContentsDTO;
 import orangetaxiteam.cocoman.application.dto.ContentsDetailDTO;
 import orangetaxiteam.cocoman.application.dto.StarRatingCreateRequestDTO;
 import orangetaxiteam.cocoman.domain.Contents;
@@ -143,5 +144,10 @@ public class ContentsApplicationService {
         double rating = starRatingCreateRequestDTO.getRating();
         starRating.update(rating);
         this.starRatingRepository.save(starRating);
+    }
+
+    @Transactional
+    public List<ContentsDTO> weekTopContents() {
+        
     }
 }
